@@ -15,7 +15,7 @@ def callback(ch, method, properties, body):
         image = Image.open(BytesIO(image_data))
 
         # Resize the image (e.g., to 50x50 pixels)
-        resized_image = image.resize((50, 50))
+        resized_image = image.resize((500, 500))
 
         # Save the resized image locally
         resized_image.save('resized_image.jpg')
