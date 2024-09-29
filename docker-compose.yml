@@ -12,6 +12,13 @@ services:
     volumes:
       - rabbit_mqdata:/usr/share/rabbitmq/data # Create a volume for RabbitMQ data storage.
 
+  web:
+    image: nginx
+    volumes:
+      - /root/rabbitmqv3/consumer:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    
   producer:
     build: producer # Build the 'producer' service using the Dockerfile in the 'producer' directory.
     depends_on:
